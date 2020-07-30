@@ -1,5 +1,5 @@
-function Interpreter(cells) {
-    this.mem   = new Array(cells).fill(0);
+function Interpreter(mems) {
+    this.mem   = new Array(mems).fill(0);
     this.code  = editor.getValue().BF();
     this.mp    = 0; // memory pointer
     this.ip    = 0; // instruction pointer
