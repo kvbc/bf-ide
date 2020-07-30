@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Brainfuck Interpreter / Debugger</title>
+        <title>Brainfuck Interpreter</title>
         <link rel="stylesheet" href="style.css">
+        <meta name="keywords" content="brainfuck, bf, interpreter, debugger">
     </head>
     
     <body>
@@ -40,10 +41,10 @@
                 <option value="terminal"               >terminal</option>
                 <option value="textmate"               >textmate</option>
                 <option value="tomorrow"               >tomorrow</option>
-                <option value="tomorrow_night"         >tomorrow_night</option>
+                <option value="tomorrow_night" selected>tomorrow_night</option>
                 <option value="tomorrow_night_blue"    >tomorrow_night_blue</option>
                 <option value="tomorrow_night_bright"  >tomorrow_night_bright</option>
-                <option value="tomorrow_night_eighties" selected>tomorrow_night_eighties</option>
+                <option value="tomorrow_night_eighties">tomorrow_night_eighties</option>
                 <option value="twilight"               >twilight</option>
                 <option value="vibrant_ink"            >vibrant_ink</option>
                 <option value="xcode"                  >xcode</option>
@@ -91,7 +92,7 @@
             </div>
         </div>
 
-        <div id="footer">
+        <div id="header">
             <br>
             <button id="run"  onclick="BF_INP.run()" >Run</button>
             <button id="btfy" onclick="BF_INP.beautify()">Beautify</button>
