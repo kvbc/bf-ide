@@ -49,7 +49,7 @@ body {
 
 #mem-viewer {
     margin-left: 6px;
-    width: 99%;
+    width: 100%;
     height: 69px;
 }
 
@@ -228,7 +228,8 @@ input[type=checkbox] {
 }
 
 #debugger {
-    width: 50%;
+    width: 49%;
     height: 100%;
+    margin-left: 1%;
     display: inline-block;
 }
