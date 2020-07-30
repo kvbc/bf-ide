@@ -39,6 +39,7 @@ Debugger.prototype.run = function() {
         this.inp.skip();
     }
     else this.inp.run();
+    if(this.inp.eoc())
     BF_INP.el.dbg.eoc.style.display = 'inline';
 
     data = this.inp.data();
