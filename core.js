@@ -27,7 +27,7 @@ const BF_INP = {
             color: $("#color-sel")[0]
         },
         dbg: {
-            cells: $("#dbg-cells")[0],
+            mems: $("#dbg-mems")[0],
             dbg_mode: $("#dbg-dbgmode")[0],
             stepby: $("#dbg-stepby")[0],
             eoc: $("#dbg-eoc")[0],
@@ -81,7 +81,7 @@ const BF_INP = {
             src_viewer.setTheme(`ace/theme/${theme}`);
             mem_viewer.setTheme(`ace/theme/${theme}`);
             theme = ace.themeToClass(theme);
-            [BF_INP.el.sel.theme, BF_INP.el.sel.color, BF_INP.el.dbg.cells, BF_INP.el.dbg.stepby, BF_INP.el.input, BF_INP.el.output, document.body]
+            [BF_INP.el.sel.theme, BF_INP.el.sel.color, BF_INP.el.dbg.mems, BF_INP.el.dbg.stepby, BF_INP.el.input, BF_INP.el.output, document.body]
             .forEach(e => { e.className = `ace-${theme}` });
         },
         color: () => {
@@ -92,14 +92,14 @@ const BF_INP = {
     },
 
     get: {
-        cells: () => {
-            return Math.clamp(Number(BF_INP.el.dbg.cells.value), 10, 30000);
+        mems: () => {
+            return Math.clamp(Number(BF_INP.el.dbg.mems.value), 10, 30000);
         }
     },
 
     run: () => {
         BF_INP.audio.press.play();
-        let inp = new Interpreter(BF_INP.get.cells());
+        let inp = new Interpreter(BF_INP.get.mems());
         inp.init();
         inp.run();
     },
