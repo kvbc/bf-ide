@@ -1,5 +1,5 @@
 function Debugger() {
-    this.inp = new Interpreter(BF_INP.get.cells());
+    this.inp = new Interpreter(BF_INP.get.mems());
     this.inp.init();
 }
 
