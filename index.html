@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Brainfuck Interpreter</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <div id="header">
+            <h4>Theme: </h4>
+            <select id="theme-sel" onchange="BF_INP.audio.small_press.play(); BF_INP.update.theme()">
+                <option value="ambiance"               >ambiance</option>
+                <option value="chaos"                  >chaos</option>
+                <option value="chrome"                 >chrome</option>
+                <option value="clouds"                 >clouds</option>
+                <option value="clouds_midnight"        >clouds_midnight</option>
+                <option value="cobalt"                 >cobalt</option>
+                <option value="crimson_editor"         >crimson_editor</option>
+                <option value="dawn"                   >dawn</option>
+                <option value="dracula"                >dracula</option>
+                <option value="dreamweaver"            >dreamweaver</option>
+                <option value="eclipse"                >eclipse</option>
+                <option value="github"                 >github</option>
+                <option value="gob"                    >gob</option>
+                <option value="gruvbox"                >gruvbox</option>
+                <option value="idle_fingers"           >idle_fingers</option>
+                <option value="iplastic"               >iplastic</option>
+                <option value="katzenmilch"            >katzenmilch</option>
+                <option value="kr_theme"               >kr_theme</option>
+                <option value="kuroir"                 >kuroir</option>
+                <option value="merbivore"              >merbivore</option>
+                <option value="merbivore_soft"         >merbivore_soft</option>
+                <option value="mono_industrial"        >mono_industrial</option>
+                <option value="monokai"                >monokai</option>
+                <option value="nord_dark"              >nord_dark</option>
+                <option value="pastel_on_dark"         >pastel_on_dark</option>
+                <option value="solarized_dark"         >solarized_dark</option>
+                <option value="solarized_light"        >solarized_light</option>
+                <option value="sqlserver"              >sqlserver</option>
+                <option value="terminal"               >terminal</option>
+                <option value="textmate"               >textmate</option>
+                <option value="tomorrow"               >tomorrow</option>
+                <option value="tomorrow_night" selected>tomorrow_night</option>
+                <option value="tomorrow_night_blue"    >tomorrow_night_blue</option>
+                <option value="tomorrow_night_bright"  >tomorrow_night_bright</option>
+                <option value="tomorrow_night_eighties">tomorrow_night_eighties</option>
+                <option value="twilight"               >twilight</option>
+                <option value="vibrant_ink"            >vibrant_ink</option>
+                <option value="xcode"                  >xcode</option>
+            </select>
+            <h4>Color: </h4>
+            <select id="color-sel" onchange="BF_INP.update.color()">
+                <option value="hotpink">hot pink</option>
+                <option value="aqua"   >aqua</option>
+                <option value="fuchsia">fuchsia</option>
+                <option value="lime"   >lime</option>
+                <option value="crimson">crimson</option>
+                <option value="red"    >red</option>
+                <option value="black"  >black</option>
+                <option value="white"  >white</option>
+            </select>
+        </div>
+
+        <div id="main">
+            <div id="editor">+[++[<+++>->+++<]>+++++++]<<<--.<.<--..<<---.<+++.<+.>>.>+.>.>-.<<<<+.[<]>+.</div>
+            <div id="debugger">
+                <label for="dbg-cells">Cells: </label>
+                <input id="dbg-cells" value="30000"></input>
+                <br><br>
+                <label for="dbg-dbgmode">Debug mode:</label>
+                <input id="dbg-dbgmode" type="checkbox" onchange="BF_INP.dbg_mode = BF_INP.el.dbg.dbg_mode.checked"></input>
+                <h3 id="dbg-info">When debug mode is enabled, you can put breakpoints using the '#' sign and later on move to the closest one by using debugger's "Run" button<h3>
+                <br>
+                <button id="dbg" disabled>Debugger</button>
+                <br>
+                <h3 id="dbg-ip">ip: 0</h3>
+                <h3 id="dbg-mp">mp: 0</h3>
+                <label for="dbg-stepby">Step by: </label>
+                <input id="dbg-stepby" value="1"></input>
+                <br><br>
+                <div id="src-viewer">Source View</div>
+                <h3 id="dbg-eoc">Reached end of the code</h3>
+                <br><br>
+                <button id="dbg-start" onclick="BF_INP.debugger.start()">Start</button>
+                <button id="dbg-stop"  onclick="BF_INP.debugger.stop()" >Stop</button>
+                <button id="dbg-run"   onclick="BF_INP.debugger.run()"  >Run</button>
+                <button id="dbg-step"  onclick="BF_INP.debugger.step()" >Step</button>
+                <br><br>
+                <div id="mem-viewer">Memory View</div>
+                <img id="dbg-memp" src="img/memp.png" width="30"></img>
+            </div>
+        </div>
+
+        <div id="header">
+            <br>
+            <button id="run"  onclick="BF_INP.run()" >Run</button>
+            <button id="btfy" onclick="BF_INP.beautify()">Beautify</button>
+            <button id="clr1" onclick="BF_INP.clear(editor)">Clear</button>
+            <br><br>
+            <textarea id="input"  placeholder="Input"  rows="15" cols="100"></textarea>
+            <textarea id="output" placeholder="Output" rows="15" cols="100" readonly></textarea>
+            <br>
+            <button id="clr2" onclick="BF_INP.clear(input)" >Clear</button>
+            <button id="clr3" onclick="BF_INP.clear(output)">Clear</button>
+        </div>
+    </body>
+
+    <script src="jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="ace/mode/bf.js"></script>
+    <script src="utils/math.js"></script>
+    <script src="utils/string.js"></script>
+    <script src="utils/number.js"></script>
+    <script src="utils/array.js"></script>
+    <script src="utils/ace.js"></script>
+    <script src="core.js"></script>
+    <script src="utils.js"></script>
+    <script src="inp.js"></script>
+    <script src="dbg.js"></script>
+</html>

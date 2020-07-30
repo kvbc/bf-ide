@@ -1,0 +1,219 @@
+@font-face {
+    font-family: consolas;
+    src: url("fonts/consolas.ttf");
+}
+
+:root {
+    --color: hotpink;
+}
+
+body {
+    background-color: #242424;
+}
+
+
+/*
+** ace
+*/
+
+.ace_editor {
+    font-size: larger;
+}
+
+.ace_scrollbar-v,
+.ace_scrollbar-h {
+    overflow: hidden;
+}
+
+
+/*
+** editors
+*/
+
+#editor {
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+}
+
+#src-viewer {
+    margin-left: 6px;
+    width: 99%;
+    height: 23px;
+}
+#src-viewer .ace_selection {
+    opacity: 30%;
+    background-color: var(--color);
+}
+
+#mem-viewer {
+    margin-left: 6px;
+    width: 100%;
+    height: 69px;
+}
+
+
+/*
+** buttons
+*/
+
+button {
+    width: 100px;
+    height: 40px;
+    background: none;
+    font-size: 18px;
+    font-family: consolas;
+    color: var(--color);
+    border-color: var(--color);
+    outline: none;
+    cursor: pointer;
+}
+
+#run,
+#btfy,
+#clr1 {
+    margin-left: 15px;
+    display: inline-block;
+}
+#clr3 {
+    margin-left: 546px;
+}
+
+#dbg {
+    display: block;
+    cursor: default;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#dbg-start,
+#dbg-stop,
+#dbg-run,
+#dbg-step {
+    margin-left: 20px;
+}
+
+
+/*
+** textareas
+*/
+
+textarea {
+    resize: none;
+    outline: none;
+}
+
+#input,
+#output {
+    display: inline-block;
+    font-size: 22px;
+    width: 600px;
+    height: 225px;
+}
+#output {
+    margin-left: 40px;
+}
+
+
+/*
+** hs
+*/
+
+h3, 
+h4 {
+    color: silver;
+    font-weight: normal;
+    font-family: consolas;
+}
+
+#header h3,
+h4 {
+    color: var(--color);
+    display: inline-block;
+    margin-left: 50px;
+}
+
+#dbg-ip,
+#dbg-mp {
+    font-weight: bold;
+}
+
+#dbg-info,
+#dbg-eoc {
+    color: gray;
+}
+
+#dbg-eoc {
+    display: none;
+    margin-left: 6px;
+}
+
+
+/*
+** imgs
+*/
+
+#dbg-memp {
+    display: none;
+    margin-left: 391px;
+}
+
+
+/*
+** selects
+*/
+
+#theme-sel,
+#color-sel {
+    size: 50;
+    height: 30px;
+    border-width: 0px;
+    outline: none;
+    display: inline-block;
+}
+
+
+/*
+** label
+*/
+
+label {
+    font-size: 18px;
+    font-family: consolas;
+    vertical-align: middle;
+    color: silver;
+}
+
+
+/*
+** inputs
+*/
+
+input {
+    outline-width: 0;
+    font-family: consolas;
+    border-color: silver;
+    vertical-align: middle;
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+/*
+** other divs
+*/
+
+#main {
+    height: 500px;
+}
+
+#debugger {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+}
