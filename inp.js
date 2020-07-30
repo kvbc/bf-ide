@@ -25,11 +25,11 @@ Interpreter.prototype.eoc = function() {
 
 
 Interpreter.prototype.init = function() {
-    let mem = [];
+    let stack = [];
     for(let i = 0; i < this.code.length; i++)
-        if(this.code[i] == '[') mem.push(i);
+        if(this.code[i] == '[') stack.push(i);
         else if(this.code[i] == ']') {
-            let start = mem.pop();
+            let start = stack.pop();
             this.start[i] = start;
             this.end[start] = i;
         }
