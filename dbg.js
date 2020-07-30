@@ -72,7 +72,7 @@ Debugger.prototype.step = function() {
 Debugger.prototype.update = {
     mem: (data) => {
         let mem       = data.stack.prev(5, data.mp).add(data.mp.pad(5)).add(data.stack.next(5, data.mp));
-        let mem_val   = mem.map    (ip  => { return data.stack[Number(ip)].center(5);                            });
+        let mem_val   = mem.map    (mp  => { return data.stack[Number(mp)].center(5);                            });
         let ascii_val = mem_val.map(val => { return String.fromCharCode(Number(val)).replaceSpecial().center(5); });
         mem_viewer.setValue(`${ascii_val.join('  ')}\n${mem_val.join('  ')}\n${mem.join('  ')}`);
         mem_viewer.clearSelection();
