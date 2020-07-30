@@ -205,6 +205,21 @@ input[type=checkbox] {
 
 
 /*
+** as
+*/
+
+#src {
+    position: absolute;
+    color: var(--color);
+    font-family: consolas;
+    font-size: larger;
+    text-align: right;
+    right: 18px;
+    bottom: 10px;
+}
+
+
+/*
 ** other divs
 */
 
