@@ -58,6 +58,7 @@ Interpreter.prototype.step = function(by = 1) {
             BF_INP.el.output.value += String.fromCharCode(this.mem[this.mp]);
             break;
         case ',':
+            this.mem[this.mp] = 0;
             if(this.inpi >= BF_INP.el.input.value.length) break;
             this.mem[this.mp] = BF_INP.el.input.value.charCodeAt(this.inpi++);
             break;
