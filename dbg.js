@@ -9,7 +9,6 @@ Debugger.prototype.start = function() {
     BF_INP.button.enable('dbg-stop');
     BF_INP.button.enable('dbg-run');
     BF_INP.button.enable('dbg-step');
-    (this.inp = new Interpreter(BF_INP.get.cells())).init();
     src_viewer.setValue(editor.getValue().BF());
     src_viewer.clearSelection();
     src_viewer.selection.setRange(new Range(0, 0, 0, 1));
