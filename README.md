@@ -1,2 +1,2 @@
 # bf-inp
-Online brainfuck Interpreter / Debugger
+Online [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) Interpreter / Debugger
